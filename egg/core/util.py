@@ -52,12 +52,12 @@ def _populate_cl_params(arg_parser: argparse.ArgumentParser) -> argparse.Argumen
         default=1,
         help="The validation would be run every `validation_freq` epochs",
     )
-    arg_parser.add_argument(
-        "--n_epochs",
-        type=int,
-        default=10,
-        help="Number of epochs to train (default: 10)",
-    )
+    # arg_parser.add_argument(
+    #     "--n_epochs",
+    #     type=int,
+    #     default=10,
+    #     help="Number of epochs to train (default: 10)",
+    # )
     arg_parser.add_argument(
         "--load_from_checkpoint",
         type=str,
@@ -70,12 +70,12 @@ def _populate_cl_params(arg_parser: argparse.ArgumentParser) -> argparse.Argumen
         "--no_cuda", default=False, help="disable cuda", action="store_true"
     )
     # dataset
-    arg_parser.add_argument(
-        "--batch_size",
-        type=int,
-        default=32,
-        help="Input batch size for training (default: 32)",
-    )
+    # arg_parser.add_argument(
+    #     "--batch_size",
+    #     type=int,
+    #     default=32,
+    #     help="Input batch size for training (default: 32)",
+    # )
 
     # optimizer
     arg_parser.add_argument(
@@ -84,9 +84,9 @@ def _populate_cl_params(arg_parser: argparse.ArgumentParser) -> argparse.Argumen
         default="adam",
         help="Optimizer to use [adam, sgd, adagrad] (default: adam)",
     )
-    arg_parser.add_argument(
-        "--lr", type=float, default=1e-2, help="Learning rate (default: 1e-2)"
-    )
+    # arg_parser.add_argument(
+    #     "--lr", type=float, default=1e-2, help="Learning rate (default: 1e-2)"
+    # )
     arg_parser.add_argument(
         "--update_freq",
         type=int,
@@ -224,9 +224,11 @@ def get_opts() -> argparse.Namespace:
     return common_opts
 
 
-def build_optimizer(params: Iterable) -> torch.optim.Optimizer:
-    return optimizer(params, lr=get_opts().lr)
+# def build_optimizer(params: Iterable) -> torch.optim.Optimizer:
+#     return optimizer(params, lr=get_opts().lr)
 
+def build_optimizer(params: Iterable, rate) -> torch.optim.Optimizer:
+    return optimizer(params, lr=rate)
 
 def get_summary_writer() -> "torch.utils.SummaryWriter":
     """

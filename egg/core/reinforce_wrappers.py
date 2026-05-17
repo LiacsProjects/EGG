@@ -192,6 +192,8 @@ class SymbolGameReinforce(nn.Module):
             sender_entropy.mean() * self.sender_entropy_coeff
             + receiver_entropy.mean() * self.receiver_entropy_coeff
         )
+        # print("policy_loss", policy_loss)
+        # print("entropy_loss", entropy_loss)
 
         if self.training:
             self.baseline.update(loss.detach())

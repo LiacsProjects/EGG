@@ -1,7 +1,7 @@
-# Copyright (c) Facebook, Inc. and its affiliates.
+# # Copyright (c) Facebook, Inc. and its affiliates.
 
-# This source code is licensed under the MIT license found in the
-# LICENSE file in the root directory of this source tree.
+# # This source code is licensed under the MIT license found in the
+# # LICENSE file in the root directory of this source tree.
 
 from .callbacks import (
     Callback,
@@ -35,7 +35,7 @@ from .language_analysis import (
     TopographicSimilarity,
 )
 from .losses import DiscriminationLoss, NTXentLoss, ReconstructionLoss
-from .population import FullSweepAgentSampler, PopulationGame, UniformAgentSampler
+# from .population import FullSweepAgentSampler, PopulationGame, UniformAgentSampler
 from .reinforce_wrappers import (
     CommunicationRnnReinforce,
     ReinforceDeterministicWrapper,
@@ -48,7 +48,7 @@ from .reinforce_wrappers import (
     TransformerReceiverDeterministic,
     TransformerSenderReinforce,
 )
-from .rnn import RnnEncoder
+# from .rnn import RnnEncoder
 from .trainers import Trainer
 from .util import (
     build_optimizer,
